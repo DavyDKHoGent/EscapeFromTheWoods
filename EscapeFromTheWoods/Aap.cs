@@ -8,30 +8,20 @@ namespace EscapeFromTheWoods
 {
     public class Aap : IComparable<Aap>
     {
-        public List<Boom> _touchedBomen;
-        public List<string> _log;
-        public Aap(int id, string naam, Graphics graphics, Pen pen)
+        public Aap(int id, string naam, Color color)
         {
             Id = id;
             Naam = naam;
-            Graphics = graphics;
-            Pen = pen;
-            _touchedBomen = new List<Boom>();
-            _log = new List<string>();
+            Color = color;
+            TouchedBomen = new List<Boom>();
+            Logs = new List<Log>(); 
         }
         public int Id { get; set; }
         public string Naam { get; set; }
-        public Graphics Graphics { get; set; }
-        public Pen Pen { get; set; }
-        public void Touch(Boom b)
-        {
-            _touchedBomen.Add(b);
-        }
-        public void AddLog(string s)
-        {
-            _log.Add(s);
-        }
-
+        public Color Color { get; set; }
+        public Pen Pen { get { return new Pen(Color, 1); } }
+        public List<Boom> TouchedBomen { get; set; }
+        public List<Log> Logs { get; set; }
         public int CompareTo([AllowNull] Aap other)
         {
             return Naam.CompareTo(other.Naam);

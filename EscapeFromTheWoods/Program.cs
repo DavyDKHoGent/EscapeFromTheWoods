@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Diagnostics;
 
 namespace EscapeFromTheWoods
 {
@@ -13,25 +14,35 @@ namespace EscapeFromTheWoods
     {
         static void Main()
         {
-            Bitmap bitmap = new Bitmap(1000, 1000);
-            
+            Stopwatch stopwatch = new Stopwatch();
             DatabaseManager dbm = new DatabaseManager(@"Data Source=LAPTOP-1U6AQSEQ\SQLEXPRESS;Initial Catalog=EscapeFromTheWoods;Integrated Security=True");
             int monkeyId = dbm.GetMonkeyId();
-
-            List<Aap> apen = new List<Aap>
+            List<Bos> bossen = new List<Bos>();
+            Bos bos1 = BosGenerator.MaakBos(bossen.Count, 500, 500, 600);
+            List<Aap> apen1 = new List<Aap>
             {
-                new Aap(monkeyId, "Jeff", Graphics.FromImage(bitmap), new Pen(Color.Red, 1)),
-                new Aap(monkeyId+1, "Kwak", Graphics.FromImage(bitmap), new Pen(Color.Yellow, 1)),
-                new Aap(monkeyId+2, "Azomopoirodovvody", Graphics.FromImage(bitmap), new Pen(Color.Blue, 1))
+                new Aap(monkeyId, "Jeff", Color.Red),
+                new Aap(monkeyId+1, "Kwak",  Color.Yellow),
+                new Aap(monkeyId+2, "Azomopoirodovvody",  Color.Blue)
             };
-
-            int aantalBomen = (bitmap.Width + bitmap.Height) / 2;
-            int woodId = dbm.GetWoodId();
-            Bos bos = new Bos(woodId, bitmap, apen, aantalBomen);
-
-            Escape.Run(bos, new System.Diagnostics.Stopwatch());
+            bos1.AddApen(apen1);
+            bossen.Add(bos1);
             
-            bos.Bitmap.Save(Path.Combine(@"C:\Users\davy\Documents\data\EscapeFromTheWoods", $"{bos.Id}_Escapethewoods.Jpeg"), ImageFormat.Jpeg);
+            Bos bos2 = BosGenerator.MaakBos(bossen.Count, 1000, 1000, 1700);
+            List<Aap> apen2 = new List<Aap>
+            {
+                new Aap(monkeyId+3, "Eduardo", Color.White),
+                new Aap(monkeyId+4, "Ivan",  Color.Aqua),
+                new Aap(monkeyId+5, "Hartje",  Color.DarkOrange)
+            };
+            bos2.AddApen(apen2);
+            bossen.Add(bos2);
+
+            MonkeyMadness mm = new MonkeyMadness();
+            List<Task> tasks = new List<Task>();
+            bossen.ForEach(bos => tasks.Add(Task.Run(() => mm.Escape(bos, stopwatch))));
+            Task.WaitAll(tasks.ToArray());
+            Console.WriteLine($"finished at: {stopwatch.Elapsed }");
         }
     }
 }
