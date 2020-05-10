@@ -7,15 +7,13 @@ namespace EscapeFromTheWoods
 {
     public class BosGenerator
     {
-        public static Bos MaakBos(int aantalBossen, int breedte, int hoogte, int aantalBomen)
+        public Bos MaakBos(int bosId, int breedte, int hoogte, int aantalBomen)
         {
-            DatabaseManager dbm = new DatabaseManager(@"Data Source=LAPTOP-1U6AQSEQ\SQLEXPRESS;Initial Catalog=EscapeFromTheWoods;Integrated Security=True");
-            int woodId = dbm.GetWoodId();
             Bitmap bitmap = new Bitmap(breedte, hoogte);
             List<Boom> bomen = MaakBomen(bitmap, aantalBomen);
-            return new Bos(woodId + aantalBossen, bitmap, bomen);
+            return new Bos(bosId, bitmap, bomen);
         }
-        private static List<Boom> MaakBomen(Bitmap bitmap, int aantalBomen)
+        private List<Boom> MaakBomen(Bitmap bitmap, int aantalBomen)
         {
             int id = 1;
             Random r = new Random();

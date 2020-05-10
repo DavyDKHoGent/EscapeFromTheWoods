@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="EscapeFromTheWoods.Bos">
+    <Position X="11" Y="3.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AABKAAAAAAAAAAAAAAgAAAAACAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Bos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EscapeFromTheWoods.Boom">
+    <Position X="4.25" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Boom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EscapeFromTheWoods.Aap" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQAAAACAQAAAAQBAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Aap.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EscapeFromTheWoods.BosGenerator">
+    <Position X="4" Y="0.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>BosGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EscapeFromTheWoods.DatabaseManager">
+    <Position X="9.75" Y="0.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAACAAIAAAAAIAAAAABABAQA=</HashCode>
+      <FileName>DatabaseManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EscapeFromTheWoods.GraphicsExtensions">
+    <Position X="5.25" Y="5.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>GraphicsExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EscapeFromTheWoods.Log">
+    <Position X="0.5" Y="4.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAABAEAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Log.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EscapeFromTheWoods.MonkeyMadness">
+    <Position X="6.75" Y="3.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAIAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>MonkeyMadness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EscapeFromTheWoods.Writer">
+    <Position X="7" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Writer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -17,8 +17,10 @@ namespace EscapeFromTheWoods
             Stopwatch stopwatch = new Stopwatch();
             DatabaseManager dbm = new DatabaseManager(@"Data Source=LAPTOP-1U6AQSEQ\SQLEXPRESS;Initial Catalog=EscapeFromTheWoods;Integrated Security=True");
             int monkeyId = dbm.GetMonkeyId();
+            int bosId = dbm.GetWoodId();
             List<Bos> bossen = new List<Bos>();
-            Bos bos1 = BosGenerator.MaakBos(bossen.Count, 500, 500, 600);
+            BosGenerator bgn = new BosGenerator();
+            Bos bos1 = bgn.MaakBos(bosId, 500, 500, 600);
             List<Aap> apen1 = new List<Aap>
             {
                 new Aap(monkeyId, "Jeff", Color.Red),
@@ -28,7 +30,7 @@ namespace EscapeFromTheWoods
             bos1.AddApen(apen1);
             bossen.Add(bos1);
             
-            Bos bos2 = BosGenerator.MaakBos(bossen.Count, 1000, 1000, 1700);
+            Bos bos2 = bgn.MaakBos(bosId+1, 1000, 1000, 1700);
             List<Aap> apen2 = new List<Aap>
             {
                 new Aap(monkeyId+3, "Eduardo", Color.White),
